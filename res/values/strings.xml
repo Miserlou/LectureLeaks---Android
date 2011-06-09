@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LectureLeaks</string>
+    <string name="menu_cell_1">Record</string>
+    <string name="menu_cell_2">Learn</string>
+    <string name="menu_cell_3">Schedule</string>
+    <string name="menu_cell_4">About</string>
+</resources>
