@@ -40,7 +40,7 @@
 		android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>
 	</RelativeLayout>
-		<org.prx.mediaapp.base.BetterListView
+		<org.ale.lectureleaks.BetterListView
 		    android:id="@+id/list"
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
@@ -48,7 +48,7 @@
 		    android:scrollbars="vertical"
 		    android:scrollbarStyle="outsideOverlay" 
 		    android:cacheColorHint="#00000000"
-		    android:background="#00000000"
+		    android:background="@drawable/gradient_background"
 		    android:fadingEdgeLength="7dip"
 		    android:fadingEdge="vertical"
 		    android:divider="#F2F2F2" 

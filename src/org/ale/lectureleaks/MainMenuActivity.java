@@ -36,8 +36,8 @@ public class MainMenuActivity extends ActivityGroup {
         
         gridView = (GridView) findViewById(R.id.gridview);
         
-        listItems.add(new MenuCellItem(getString(R.string.menu_cell_1), R.drawable.record, AboutActivity.class));
-        listItems.add(new MenuCellItem(getString(R.string.menu_cell_2), R.drawable.learn, AboutActivity.class));
+        listItems.add(new MenuCellItem(getString(R.string.menu_cell_1), R.drawable.record, RecorderActivity.class));
+        listItems.add(new MenuCellItem(getString(R.string.menu_cell_2), R.drawable.learn, LearnListViewActivity.class));
         listItems.add(new MenuCellItem(getString(R.string.menu_cell_3), R.drawable.schedule, AboutActivity.class));
         listItems.add(new MenuCellItem(getString(R.string.menu_cell_4), R.drawable.about, AboutActivity.class));
         

@@ -41,7 +41,7 @@ public class rService extends Service{
     public String foreground_service_started = "1";
 
 	
-	audioRecorder recorder = new audioRecorder("/recordings/" + System.currentTimeMillis() + ".3gp");
+	audioRecorder recorder = new audioRecorder("/lectures/" + System.currentTimeMillis() + ".3gp");
 	private boolean running=false;
 	
 	@Override
