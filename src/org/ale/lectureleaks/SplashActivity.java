@@ -8,7 +8,7 @@ import android.view.Window;
 
 public class SplashActivity extends Activity { 
       
-     private final int SPLASH_DISPLAY_LENGHT = 1500; 
+     private final int SPLASH_DISPLAY_LENGHT = 4000; 
      private Handler mHandler; 
 
      /** Called when the activity is first created. */ 

@@ -16,9 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class LearnArrayListAdapter extends ArrayAdapter<ArrayList<ArrayList<HashMap<String, String>>>> implements LectureLeaksAdapterInterface{
+public class LearnAPIArrayListAdapter extends ArrayAdapter<ArrayList<ArrayList<HashMap<String, String>>>> implements LectureLeaksAdapterInterface{
 
-    public LearnArrayListAdapter(Context c, int i) {
+    public LearnAPIArrayListAdapter(Context c, int i) {
         super(c, i);
         r = c.getResources();
         rightArrow = r.getDrawable(R.drawable.rightarrow);
@@ -57,14 +57,9 @@ public class LearnArrayListAdapter extends ArrayAdapter<ArrayList<ArrayList<Hash
             return convertView;
         }
         HashMap<String, String> r = items.get(position).get(0);
-        holder.text.setText(r.get("title"));
-        String d = r.get("description");
-        if(d != null && d != "null") {
-            holder.desc.setText(d);
-        }
-        else {
-            holder.desc.setText("No description available");
-        }
+        holder.text.setText(r.get("name"));
+        holder.desc.setText(r.get("name"));
+        
         
         // This is a category header
         if(r.containsKey("head") && r.get("head").equals("true")) {

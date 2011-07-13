@@ -8,7 +8,6 @@
    android:fadingEdge="none"
    >
    
-   
    <RelativeLayout
    android:fadingEdge="none"
    	android:id="@+id/wlll" 
@@ -59,7 +58,7 @@
 			    android:columnWidth="240dip"
 			    android:stretchMode="columnWidth"
 			    android:gravity="center"
-			    android:paddingTop="90dip"
+			    android:paddingTop="70dip"
 			    android:listSelector="@layout/detailed_menu_shape_selected"
 			    />
 				

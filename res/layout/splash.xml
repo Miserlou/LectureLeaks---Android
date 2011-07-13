@@ -5,4 +5,12 @@
     android:layout_height="fill_parent" 
     android:background="@drawable/splash"
    >
+   
+   			<ImageView
+				android:id="@+id/logo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/logo3big"
+				android:paddingTop="100dip">
+			</ImageView>
 </LinearLayout>

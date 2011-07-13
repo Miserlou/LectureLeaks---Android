@@ -94,8 +94,8 @@ public class LearnListViewActivity extends Activity{
         
         hm = new HashMap<String, String>();
         al = new ArrayList<HashMap<String,String>>();
-        hm.put("description", "Boston University");
-        hm.put("title", "Boston University");
+        hm.put("description", "A Complete List of Schools with Lectures");
+        hm.put("title", "All Schools");
         al.add(hm);
         mal.add(al);
 
@@ -118,6 +118,13 @@ public class LearnListViewActivity extends Activity{
  
                 if(shmap.containsKey("head") && shmap.get("head").equals("true")) {
                     //fuck
+                }
+                else if(shmap.containsKey("title") && shmap.get("title").equals("All Schools")){
+                    arg1.setBackgroundResource(R.layout.header_bar_gradient);
+                    Intent i = new Intent(c, LearnSubListViewActivity.class);
+                    i.putExtra("title", shmap.get("title"));
+                    startActivity(i);
+                    lastTouched = arg1;
                 }
                 else {
                     arg1.setBackgroundResource(R.layout.header_bar_gradient);

@@ -30,8 +30,27 @@
         <activity android:name=".LearnListViewActivity"
                   android:label="@string/app_name">
         </activity>
+        <activity android:name=".LearnSubListViewActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".LearnSchoolListViewActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".LearnSubjectListViewActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".LearnCourseListViewActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".LearnLectureListViewActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".PlayerActivity"
+                  android:label="@string/app_name">
+        </activity>
         <service android:name=".rService"/>
         <service android:name=".uService"/>
+        <service android:name=".PlayerService"/>
 
     </application>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
