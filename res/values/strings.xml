@@ -16,14 +16,14 @@
     <string name="app_type"></string>
     <string name="app_about">AnCal is personal information management software.</string>    
     <string name="actionNew">New</string>
-    <string name="actionNewAppointment">New appointment</string>
+    <string name="actionNewAppointment">New class</string>
     <string name="actionNewTask">New task</string>
     <string name="actionNewNote">New note</string>
     <string name="actionView">View</string>
     <string name="actionShowAllTasks">Show due tasks</string>
     <string name="actionOptions">Options</string>
     <string name="actionAbout">About</string>
-    <string name="actionEditAppointment">Edit appointment</string>
+    <string name="actionEditAppointment">Edit class</string>
     <string name="btnSave">Save</string>
     <string name="btnDelete">Delete</string>
     <string name="btnDone">Done</string>
@@ -78,7 +78,7 @@
     <string name="errCantSetValuesForDataRow">Cant set values for data row</string>
     <string name="errCantGetValuesFromDataRow">Cant get values from data row</string>                
     <string name="errCantSaveOptions">Cant save options values</string>                
-    <string name="labTodayItemAppointments">Appointments</string>
+    <string name="labTodayItemAppointments">Classes</string>
     <string name="labTodayItemTasks">Tasks</string>
     <string name="labTodayItemNotes">Notes</string>
     <string name="labTodayItemNone">none</string>
@@ -97,11 +97,11 @@
     <string name="msgDaysOverdue">days ago</string>
         
 		<string name="msgYouHaveTS">You have %d task(s)</string>		
-		<string name="msgYouHaveAS">You have %d appointment(s)</string>		
+		<string name="msgYouHaveAS">You have %d class(es)</string>		
 		<string name="msgYouHaveNoASTS">List is empty</string>
 	
 		<string name="msgTS">%d task(s)..</string>
-		<string name="msgAS">%d appointment(s)..</string>
+		<string name="msgAS">%d class(es)..</string>
 
 		<string name="strReminder">Reminder</string>
 				
