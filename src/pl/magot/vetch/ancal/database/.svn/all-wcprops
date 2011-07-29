@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/database
+END
+DataRowAppointment.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/database/DataRowAppointment.java
+END
+DataTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/database/DataTable.java
+END
+DataRow.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/database/DataRow.java
+END
+Database.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/database/Database.java
+END
+DataRowTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/database/DataRowTask.java
+END
+DataRowNote.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/database/DataRowNote.java
+END
+DataField.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/database/DataField.java
+END
+DataRowAlarm.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/database/DataRowAlarm.java
+END

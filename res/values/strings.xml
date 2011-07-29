@@ -5,4 +5,145 @@
     <string name="menu_cell_2">Learn</string>
     <string name="menu_cell_3">Schedule</string>
     <string name="menu_cell_4">About</string>
+    
+    <string name="app_website">www:</string>
+    <string name="app_email">email:</string>
+    <string name="app_author">Piotr Zagawa</string>
+    <string name="app_authorcopy">Copyright © 2008 - 2010\nAll rights reserved.</string>
+    <string name="app_author_www">http://vetch.magot.pl/ancal</string>
+    <string name="app_versionstr">version</string>    
+    <string name="TimeZone">TimeZone</string>
+    <string name="app_type"></string>
+    <string name="app_about">AnCal is personal information management software.</string>    
+    <string name="actionNew">New</string>
+    <string name="actionNewAppointment">New appointment</string>
+    <string name="actionNewTask">New task</string>
+    <string name="actionNewNote">New note</string>
+    <string name="actionView">View</string>
+    <string name="actionShowAllTasks">Show due tasks</string>
+    <string name="actionOptions">Options</string>
+    <string name="actionAbout">About</string>
+    <string name="actionEditAppointment">Edit appointment</string>
+    <string name="btnSave">Save</string>
+    <string name="btnDelete">Delete</string>
+    <string name="btnDone">Done</string>
+    <string name="titleDefaultAppointment">Class</string>
+    <string name="titleNewAppointment">New class</string>
+    <string name="titleEditAppointment">Edit class</string>    
+    <string name="titleDefaultTask">Task</string>
+    <string name="titleNewTask">New task</string>
+    <string name="titleEditTask">Edit task</string>
+    <string name="titleDefaultNote">Note</string>
+    <string name="titleNewNote">New note</string>
+    <string name="titleEditNote">Edit note</string>    
+    <string name="titleDefaultAbout">About</string>
+    <string name="titleDefaultOptions">Options</string>
+    <string name="titleDefaultAlarmDialog">Reminder</string>
+    <string name="titleDefaultRepeat">Repeat</string>
+    <string name="labAgendaViewType">View</string>    
+    <string name="labSubject">Subject</string>    
+    <string name="labText">Text</string>    
+    <string name="labStartDate">start date</string>
+    <string name="labStartTime">start time</string>
+    <string name="labAlarm">alarm</string>
+    <string name="labDone">done</string>
+    <string name="labPriority">priority</string>
+    <string name="labAllDay">all day</string>
+    <string name="labRepeat">repeat</string>
+    <string name="labDueDate">due</string>
+    <string name="labSetTheTime">Set the time</string>    
+    <string name="labNoTime">no time</string>
+    <string name="labNoDate">no date</string>
+    <string name="labNoEndDate">no end date</string>
+    <string name="labEvery">every</string>        
+    <string name="labEndOn">end</string>
+    <string name="lab24HourMode">24 hour mode</string>
+    <string name="errCantOpenDb">Cant open database</string>        
+    <string name="errNoDbAccess">No access to database</string>        
+    <string name="errCantCreateTable">Cant create table</string>        
+    <string name="errTableNotExists">Table does not exist</string>        
+    <string name="infoEnterAllRequiredData">Please enter all required data</string>
+    <string name="infoEnterValidDate">Please correct date</string>       
+    <string name="msgTypeInfo">Information</string>
+    <string name="msgTypeWarning">Warning</string>
+    <string name="msgTypeError">Error</string>
+    <string name="msgBoxButtonOk">OK</string>
+    <string name="errCantInsertNewData">Cant insert new data to database</string>        
+    <string name="errCantUpdateData">Cant update row values in database</string>        
+    <string name="errUnknown">Undefined database error</string>   
+    <string name="errCantGetDataFromTable">Cant get data from table</string>
+    <string name="errCantFindData">Cant find data</string>
+    <string name="errCantGetData">Cant get data</string>            
+    <string name="errCantDeleteData">Cant delete row values from database</string>
+    <string name="errCantSetValuesForDataRow">Cant set values for data row</string>
+    <string name="errCantGetValuesFromDataRow">Cant get values from data row</string>                
+    <string name="errCantSaveOptions">Cant save options values</string>                
+    <string name="labTodayItemAppointments">Appointments</string>
+    <string name="labTodayItemTasks">Tasks</string>
+    <string name="labTodayItemNotes">Notes</string>
+    <string name="labTodayItemNone">none</string>
+    <string name="labWeek">W:</string>
+    
+    <string name="labSelectViewDay">Day</string>
+    <string name="labSelectViewWeek">Week</string>
+    <string name="labSelectViewMonth">Month</string>
+        
+    <string name="labSelectItemPrev">prev</string>
+    <string name="labSelectItemToday">today</string>
+    <string name="labSelectItemNext">next</string>
+    <string name="labFirstDayOfWeek">First day of week</string>
+    
+    <string name="msgDayOverdue">yesterday</string>    
+    <string name="msgDaysOverdue">days ago</string>
+        
+		<string name="msgYouHaveTS">You have %d task(s)</string>		
+		<string name="msgYouHaveAS">You have %d appointment(s)</string>		
+		<string name="msgYouHaveNoASTS">List is empty</string>
+	
+		<string name="msgTS">%d task(s)..</string>
+		<string name="msgAS">%d appointment(s)..</string>
+
+		<string name="strReminder">Reminder</string>
+				
+		<string name="labReminderClear">Clear</string>
+		<string name="labReminderSnooze">Snooze</string>
+		<string name="labReminderOpen">Open</string>
+		<string name="labViewToday">Today</string>
+		<string name="labViewDay">Day</string>
+		<string name="labViewWeek">Week</string>
+		<string name="labViewMonth">Month</string>
+		
+		<!-- REPEAT TYPE -->		
+		<string name="strRepeatTypeNone">none</string>
+		<string name="strRepeatTypeDaily">daily</string>
+		<string name="strRepeatTypeWeekly">weekly</string>
+		<string name="strRepeatTypeMonthly">monthly</string>
+		<string name="strRepeatTypeYearly">yearly</string>
+		<string name="strRepeatTypeLabel">Select</string>
+
+		<!-- REPEAT INFO -->
+		<string name="strRepeatInfoUntil">until</string>
+		<string name="strRepeatInfoDaily">every %d day(s)</string>
+		<string name="strRepeatInfoWeekly">every %d week(s)</string>
+		<string name="strRepeatInfoMonthly">every %d month(s)</string>
+		<string name="strRepeatInfoYearly">every year%s</string>
+
+		<!-- TASK PRIORITY -->
+		<string name="strTaskPriorityLow">low</string>
+		<string name="strTaskPriorityDefault">default</string>
+		<string name="strTaskPriorityHigh">high</string>
+
+		<string name="strSnoozeMinutes">Snooze alarm for (minutes)</string>		
+		<string name="strSnoozeTimes">Clear snoozed alarm after (times)</string>
+		
+		<!-- DATE WIDGET -->
+		<string name="strDateWidgetSelect">Select day</string>
+		<string name="strDateWidgetSelected">Selected day:</string>
+		<string name="strDateWidgetNone">none</string>
+
+		<!-- TIME WIDGET -->
+		<string name="strTimeWidgetSelect">Select time</string>
+		<string name="strTimeWidgetNone">none</string>
+		<string name="strTimeWidgetSet">set</string>
+    
 </resources>

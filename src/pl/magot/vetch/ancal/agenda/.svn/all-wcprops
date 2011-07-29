@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/16/trunk/src/pl/magot/vetch/ancal/agenda
+END
+AgendaViewMonth.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/16/trunk/src/pl/magot/vetch/ancal/agenda/AgendaViewMonth.java
+END
+AgendaViewWeek.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/16/trunk/src/pl/magot/vetch/ancal/agenda/AgendaViewWeek.java
+END
+AgendaViewDay.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/16/trunk/src/pl/magot/vetch/ancal/agenda/AgendaViewDay.java
+END
+AgendaView.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/agenda/AgendaView.java
+END
+AgendaViewToday.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/16/trunk/src/pl/magot/vetch/ancal/agenda/AgendaViewToday.java
+END

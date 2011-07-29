@@ -3,6 +3,8 @@ package org.ale.lectureleaks;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.magot.vetch.ancal.AnCal;
+
 import android.app.ActivityGroup;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,7 +40,7 @@ public class MainMenuActivity extends ActivityGroup {
         
         listItems.add(new MenuCellItem(getString(R.string.menu_cell_1), R.drawable.record, RecorderActivity.class));
         listItems.add(new MenuCellItem(getString(R.string.menu_cell_2), R.drawable.learn, LearnListViewActivity.class));
-        listItems.add(new MenuCellItem(getString(R.string.menu_cell_3), R.drawable.schedule, AboutActivity.class));
+        listItems.add(new MenuCellItem(getString(R.string.menu_cell_3), R.drawable.schedule, AnCal.class));
         listItems.add(new MenuCellItem(getString(R.string.menu_cell_4), R.drawable.about, AboutActivity.class));
         
         ListItemsAdapter lia = new ListItemsAdapter(listItems);

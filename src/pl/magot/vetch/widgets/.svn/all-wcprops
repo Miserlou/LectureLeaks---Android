@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets
+END
+KeyboardWidgetView.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/KeyboardWidgetView.java
+END
+DateWidgetDayCell.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/DateWidgetDayCell.java
+END
+SymbolButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/SymbolButton.java
+END
+DateWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/DateWidget.java
+END
+TimeWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/TimeWidget.java
+END
+KeyboardWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/KeyboardWidget.java
+END
+KeyItemLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/widgets/KeyItemLayout.java
+END
+TimeWidgetSlider.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/TimeWidgetSlider.java
+END
+KeyItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/widgets/KeyItem.java
+END
+DateWidgetDayHeader.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/DateWidgetDayHeader.java
+END
+HintEdit.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/HintEdit.java
+END
+TouchEdit.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/TouchEdit.java
+END
+TimeCaption.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/19/trunk/src/pl/magot/vetch/widgets/TimeCaption.java
+END
+dayStyle.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/widgets/dayStyle.java
+END

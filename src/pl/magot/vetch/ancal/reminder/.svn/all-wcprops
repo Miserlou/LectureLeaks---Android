@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/reminder
+END
+AlarmDataViewItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/reminder/AlarmDataViewItem.java
+END
+AlarmDataView.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/reminder/AlarmDataView.java
+END
+AlarmReminder.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/reminder/AlarmReminder.java
+END
+AlarmSound.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/reminder/AlarmSound.java
+END
+AlarmDialogDataItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/18/trunk/src/pl/magot/vetch/ancal/reminder/AlarmDialogDataItem.java
+END
+AlarmsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/reminder/AlarmsManager.java
+END
+AlarmDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/17/trunk/src/pl/magot/vetch/ancal/reminder/AlarmDialog.java
+END
+AlarmService.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/22/trunk/src/pl/magot/vetch/ancal/reminder/AlarmService.java
+END
+IAlarmService.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/11/trunk/src/pl/magot/vetch/ancal/reminder/IAlarmService.aidl
+END

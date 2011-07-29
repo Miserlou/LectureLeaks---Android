@@ -130,7 +130,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 if(p_service != null){
     		 try {
 				titleView.setText(p_service.getTitle());
-				titleView2.setText(p_service.getTitle());
 				progressBar.setEnabled(true);
 	 	        int pos = p_service.getPosition();
 		        double ratio = p_service.getDuration() / progressBar.getMax();
@@ -166,6 +165,9 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     TextView titleView;
     private LinearLayout handle;
     private TextView titleView2;
+    public String school;
+    public String subject;
+    public String course;
 
      /** Called when the activity is first created. */ 
      @Override 
@@ -185,6 +187,10 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
         	  Integer i = getIntent().getExtras().getInt("id");
         	  title = getIntent().getExtras().getString("title"); 
         	  id = i.toString();
+              title = getIntent().getStringExtra("title");
+              school = getIntent().getStringExtra("School");
+              subject  = getIntent().getStringExtra("Subject");
+              course = getIntent().getStringExtra("Course");
         	  
           }
           catch(Exception e){
@@ -233,6 +239,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 
           // Register the listener with the telephony manager
           telephonyManager.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
+         
 
      }
      
@@ -310,7 +317,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     		 progressBar.setEnabled(true);
     		 try {
 				titleView.setText(p_service.getTitle());
-				titleView2.setText(p_service.getTitle());
+    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -625,7 +632,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	    	        
 	    	        try {
 						titleView.setText(p_service.getTitle());
-						titleView2.setText(p_service.getTitle());
+    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
 					} catch (RemoteException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -671,20 +678,19 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      public void setTitleViewText(String s){
     	 this.title = s;
     	 titleView.setText(this.title);
+    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
      }
      	
      class ListenBroadcastReceiver extends BroadcastReceiver {
-    	 
-    	    @Override
+    	
+            @Override
     	    public void onReceive(Context context, final Intent intent) {
     	      
     	      streamURL = intent.getStringExtra("streamURL");
     	      id = intent.getStringExtra("id"); 
 
-    	      title = intent.getStringExtra("title");
-
     	      titleView.setText(title);
-    	      titleView2.setText(title);
+    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
     	      swapPlayButton();
     	      
     	      //XXX: THIS NEEDS THREADING!

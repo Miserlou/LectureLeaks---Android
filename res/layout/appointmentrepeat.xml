@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/llayAppointmentRepeat"
+    android:orientation="vertical"    
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" android:padding="8px">
+
+		<!-- REPEAT -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/llayAppointmentRepeat"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"	    
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		
+		<TableLayout android:stretchColumns="1"			
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+			<!-- REPEAT TYPE NONE -->
+			<TableRow>
+
+						<TextView android:layout_width="@dimen/repTypeSpacer" android:layout_height="fill_parent"
+							android:id="@+id/labRepeatTypeInfo"
+							android:textSize="@dimen/fontSizeSublabel"
+				    	android:paddingLeft="@dimen/paddingLeftLabel" android:paddingRight="@dimen/horSpace"
+							android:gravity="center_vertical" android:text="@string/strRepeatTypeLabel"/>
+		
+						<Button android:id="@+id/btnRepeatTypeNone" style="?android:attr/buttonStyleSmall"
+							android:paddingLeft="@dimen/paddingSmallButton" android:paddingRight="@dimen/paddingSmallButton"
+							android:text="@string/strRepeatTypeNone"
+					    android:layout_width="@dimen/repTypeBtnWidth" android:layout_height="wrap_content"/>
+		
+			</TableRow>	
+
+			<!-- REPEAT TYPE DAILY -->
+			<TableRow>
+			
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+	    		android:layout_width="@dimen/repTypeSpacer" android:layout_height="wrap_content"/>
+			
+				<Button android:id="@+id/btnRepeatTypeDaily" style="?android:attr/buttonStyleSmall"
+					android:paddingLeft="@dimen/paddingSmallButton" android:paddingRight="@dimen/paddingSmallButton"
+					android:text="@string/strRepeatTypeDaily"
+			    android:layout_width="@dimen/repTypeBtnWidth" android:layout_height="wrap_content"/>
+
+			</TableRow>	
+
+			<!-- REPEAT TYPE WEEKLY -->
+			<TableRow>
+
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+	    		android:layout_width="@dimen/repTypeSpacer" android:layout_height="wrap_content"/>
+
+				<Button android:id="@+id/btnRepeatTypeWeekly" style="?android:attr/buttonStyleSmall"
+					android:paddingLeft="@dimen/paddingSmallButton" android:paddingRight="@dimen/paddingSmallButton"
+					android:text="@string/strRepeatTypeWeekly"
+			    android:layout_width="@dimen/repTypeBtnWidth" android:layout_height="wrap_content"/>
+
+			</TableRow>	
+
+			<!-- REPEAT TYPE MONTHLY -->
+			<TableRow>
+
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+	    		android:layout_width="@dimen/repTypeSpacer" android:layout_height="wrap_content"/>
+
+				<Button android:id="@+id/btnRepeatTypeMonthly" style="?android:attr/buttonStyleSmall"
+					android:paddingLeft="@dimen/paddingSmallButton" android:paddingRight="@dimen/paddingSmallButton"
+					android:text="@string/strRepeatTypeMonthly"
+			    android:layout_width="@dimen/repTypeBtnWidth" android:layout_height="wrap_content"/>
+
+			</TableRow>
+
+			<!-- REPEAT TYPE YEARLY -->
+			<TableRow>
+
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+	    		android:layout_width="@dimen/repTypeSpacer" android:layout_height="wrap_content"/>
+
+				<Button android:id="@+id/btnRepeatTypeYearly" style="?android:attr/buttonStyleSmall"
+					android:paddingLeft="@dimen/paddingSmallButton" android:paddingRight="@dimen/paddingSmallButton"
+					android:text="@string/strRepeatTypeYearly"
+			    android:layout_width="@dimen/repTypeBtnWidth" android:layout_height="wrap_content"/>
+
+			</TableRow>
+
+		</TableLayout>
+		
+		</LinearLayout>
+
+		<!-- REPEAT EVERY -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/llayAppointmentRepeatEvery"
+		    android:orientation="horizontal"
+				android:gravity="right"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<TextView android:layout_width="wrap_content" android:layout_height="fill_parent"
+					android:textSize="@dimen/fontSizeSublabel"
+	    		android:paddingLeft="@dimen/paddingLeftLabel"
+	    		android:paddingRight="@dimen/horSpace"
+					android:gravity="center_vertical"
+		    	android:text="@string/labEvery"/>
+	    
+				<ImageButton android:id="@+id/btnRepeatEveryDown"
+					style="?android:attr/buttonStyleSmall"
+		    	android:layout_width="wrap_content" android:layout_height="wrap_content"
+		    	android:focusable="true"
+		    	android:gravity="center"
+		    	android:src="@drawable/btndown"/>			    		    		   
+
+				<TextView android:id="@+id/labRepeatEveryValue" 
+					android:layout_width="wrap_content" android:layout_height="fill_parent"
+					android:textSize="20dp" android:textStyle="bold"
+					android:paddingLeft="8dp" android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:gravity="center"
+					android:textColor="#ffffffff"
+			    android:text=""/>
+			  	
+				<ImageButton android:id="@+id/btnRepeatEveryUp"
+					style="?android:attr/buttonStyleSmall"
+		    	android:layout_width="wrap_content" android:layout_height="wrap_content"
+		    	android:focusable="true"
+		    	android:gravity="center"
+		    	android:src="@drawable/btnup"/>			    		    		   
+					
+		</LinearLayout>
+		
+		<!-- REPEAT END DATE -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/llayAppointmentRepeatEndOnDateLabel"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottomSmall"	    
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		    
+				<TextView android:layout_width="@dimen/labDefaultWidth" android:layout_height="fill_parent"
+					android:textSize="@dimen/fontSizeSublabel"
+		    	android:paddingLeft="@dimen/paddingLeftLabel"
+					android:gravity="center_vertical"
+			    android:text="@string/labEndOn"/>
+		    
+		</LinearLayout>		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/llayAppointmentRepeatEndOnDate"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"	    
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<Button android:id="@+id/btnAppointmentEndOnDate"
+					style="?android:attr/buttonStyleSmall"
+					android:textColor="#FF444466" android:textStyle="bold"
+					android:paddingLeft="@dimen/paddingSmallButton"
+					android:paddingRight="@dimen/paddingSmallButton"
+			    android:layout_width="fill_parent" android:layout_height="fill_parent"/>			  	
+			  		    
+		</LinearLayout>
+		
+		<!-- BOTTOM BUTTONS -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/llayAppointmentRepeatButtons"
+		    android:orientation="horizontal"
+		    android:layout_marginTop="16dp"	    
+    		android:gravity="center"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		  
+				<Button android:id="@+id/btnRepeatDone"
+					style="?android:attr/buttonStyleSmall"
+	    		android:layout_width="100dp"
+		    	android:layout_height="wrap_content"
+		    	android:focusable="true"
+	  	  	android:text="@string/strTimeWidgetSet"
+	    		android:gravity="center"/>
+					
+		</LinearLayout>
+			
+</LinearLayout>

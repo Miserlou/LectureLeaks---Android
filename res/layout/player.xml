@@ -19,7 +19,8 @@
 	    android:layout_width="wrap_content" 
 	    android:layout_height="wrap_content" 
 	    android:text="@string/app_name"
-        android:ellipsize="marquee"
+        android:ellipsize="end"
+        android:singleLine="true"
 		android:textStyle="bold"
 		android:textColor="#ffffff"
 		android:textAppearance="?android:attr/textAppearanceMedium"
@@ -65,10 +66,10 @@
 	    android:id="@+id/num_desc"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"
-	    android:textAppearance="?android:attr/textAppearanceSmall"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
 	    android:text="\nWhat is this lecture's title?"
 	    android:textColor="#fff"
-	    android:padding="3dip"
+	    android:padding="9dip"
 	    android:shadowColor="#333"
 		android:shadowRadius="1"
 		android:shadowDy="-1"
@@ -103,41 +104,51 @@
 		android:layout_marginRight="10dip"
 		android:layout_marginTop="8dip"
     ></ImageButton>
-    <TextView  
-	    android:id="@+id/at"
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content"
-	    android:textAppearance="?android:attr/textAppearanceSmall"
-	    android:text="0:00"
-	    android:textColor="#000000"
-	    android:padding="7dip"
-        android:gravity="center"
-    	
-    />
-        <TextView  
-	    android:id="@+id/length"
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content"
-	    android:textAppearance="?android:attr/textAppearanceSmall"
-	    android:text="0:00"
-	    android:textColor="#000000"
-	    android:padding="7dip"
-        android:gravity="center"
-    	
-    />
+
+    	<LinearLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:paddingLeft="4dip"
+	    android:paddingRight="4dip"
+	    android:gravity="center"
+	    >
+		        <TextView  
+		    android:id="@+id/at"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:text="0:00"
+		    android:textColor="#000000"
+		    android:padding="7dip"
+	        android:gravity="center"
+	    	
+	    />
+	    <TextView  
+		    android:id="@+id/at"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:text=" / "
+		    android:textColor="#000000"
+		    android:padding="7dip"
+	        android:gravity="center"
+	    	
+	    />
+	        <TextView  
+		    android:id="@+id/length"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:text="):00"
+		    android:textColor="#000000"
+		    android:padding="7dip"
+	        android:gravity="center"
+	    	
+	    />
     
-    <TextView  
-	    android:id="@+id/loadingtext"
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content"
-	    android:textAppearance="?android:attr/textAppearanceSmall"
-	    android:text="Sending.."
-	    android:textColor="#000000"
-	    android:padding="7dip"
-        android:gravity="center"
-    	android:visibility="gone"
-    	
-    />
+
+    </LinearLayout>
 	</LinearLayout>
 			
    </org.ale.lectureleaks.BetterScrollView>

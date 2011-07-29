@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/llayAppointment"
+    android:orientation="vertical"    
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_background"
+	>
+    
+       <RelativeLayout
+   android:fadingEdge="none"
+   	android:id="@+id/wlll" 
+	android:layout_height="45dip" 
+	android:layout_width="fill_parent"
+	android:background="@layout/header_bar_gradient">
+  
+   	<TextView  
+   		android:id="@+id/title_bar"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/app_name"
+        android:ellipsize="marquee"
+		android:textStyle="bold"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:paddingLeft="12dip"
+		android:paddingTop="9dip"
+		android:textColor="#ffffff"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1"
+		android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+		
+	    />
+   	<ImageView
+   		android:id="@+id/header_button_1"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+		android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+        
+	</RelativeLayout>
+
+		<!-- LABEL SUBJECT -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" 
+					android:textSize="@dimen/fontSizeLabel"
+			    android:text="@string/labSubject"
+			    		android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1"/>
+			    
+		</LinearLayout>
+    
+		<!-- EDIT SUBJECT -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		    	    	   
+				<view xmlns:android="http://schemas.android.com/apk/res/android"
+					class="pl.magot.vetch.widgets.TouchEdit"
+					android:id="@+id/edAppointmentSubject"
+					android:gravity="top"
+			    android:layout_width="fill_parent" android:layout_height="wrap_content"
+  				android:minLines="2" android:maxLines="2"		    
+			    android:nextFocusDown="@+id/btnAppointmentStartDate"
+			    android:text=""/>			    
+			    
+		</LinearLayout>
+		
+		<!-- ALARM -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+	    	android:gravity="right"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		    
+				<CheckBox android:id="@+id/chkAppointmentAlarm"
+			    android:layout_width="wrap_content" android:layout_height="wrap_content"
+		    	android:paddingRight="6dp"
+			    android:text="@string/labAlarm"/>
+			    
+		</LinearLayout>
+		
+		<!-- START DATE -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottomSmall"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<TextView android:layout_width="@dimen/labDefaultWidth" android:layout_height="fill_parent"
+					android:textSize="@dimen/fontSizeSublabel"
+		    	android:paddingLeft="@dimen/paddingLeftLabel"
+					android:gravity="center_vertical"
+			    android:text="@string/labStartDate"
+			    		android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1"/>
+		    
+		</LinearLayout>		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+			     
+				<Button android:id="@+id/btnAppointmentStartDate"
+					style="?android:attr/buttonStyleSmall"
+					android:textColor="#FF444466" android:textStyle="bold"
+					android:paddingLeft="@dimen/paddingSmallButton"
+					android:paddingRight="@dimen/paddingSmallButton"
+			    android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+			            
+		</LinearLayout>
+		
+		<!-- START TIME -->
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottomSmall"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<TextView android:layout_width="@dimen/labDefaultWidth" android:layout_height="fill_parent"
+					android:textSize="@dimen/fontSizeSublabel"
+		    	android:paddingLeft="@dimen/paddingLeftLabel"
+					android:gravity="center_vertical"
+			    android:text="@string/labStartTime"
+			    		android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1"/>
+
+		</LinearLayout>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"	    
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<Button android:id="@+id/btnAppointmentStartTime"
+					style="?android:attr/buttonStyleSmall"
+					android:textSize="@dimen/fontSizeSublabel"
+					android:textColor="#FFaa5500" android:textStyle="bold"
+					android:paddingLeft="@dimen/paddingButtonTime"
+					android:paddingRight="@dimen/paddingButtonTime"
+			    android:layout_width="wrap_content" android:layout_height="fill_parent"/>
+			    	    
+				<CheckBox android:id="@+id/chkAppointmentAllDay"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+					android:layout_marginLeft="6dp"
+			    android:text="@string/labAllDay"/>
+			    		    		   
+		</LinearLayout>
+		
+		<!-- REPEAT -->		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottomSmall"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+				<TextView android:layout_width="@dimen/labDefaultWidth" android:layout_height="fill_parent"
+					android:textSize="@dimen/fontSizeSublabel"
+		    	android:paddingLeft="@dimen/paddingLeftLabel"
+					android:gravity="center_vertical"
+			    android:text="@string/labRepeat"
+			    		android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1"/>
+		    
+		</LinearLayout>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="@dimen/marginBottom"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		    
+				<Button android:id="@+id/btnRepeatSelect"
+					style="?android:attr/buttonStyleSmall"
+					android:paddingLeft="@dimen/paddingSmallButton"
+					android:paddingRight="@dimen/paddingSmallButton"
+					android:text="..."
+			    android:layout_width="fill_parent" android:layout_height="wrap_content"/>			    		   
+			  	        
+		</LinearLayout>
+			
+		<!-- BUTTONS DELETE/SAVE -->
+	 	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+	
+	   	<ImageButton android:id="@+id/btnAppointmentDelete"
+	    	android:layout_width="@dimen/closeBtnWidth"
+	    	android:layout_height="wrap_content"
+	    	android:focusable="true"
+	    	android:layout_alignParentLeft="true"
+	    	android:layout_alignParentBottom="true"
+	    	android:text="@string/btnDelete"
+	    	android:gravity="center"
+			  android:nextFocusRight="@+id/btnAppointmentSave"    	
+	    	android:src="@drawable/checkmarkdelete"/>
+	    	
+	   	<ImageButton android:id="@+id/btnAppointmentSave"
+	    	android:layout_width="@dimen/closeBtnWidth"
+	    	android:layout_height="wrap_content"
+	    	android:focusable="true"
+	    	android:layout_alignParentRight="true"
+	    	android:layout_alignParentBottom="true"
+	    	android:text="@string/btnSave"
+	    	android:gravity="center"
+			  android:nextFocusLeft="@+id/btnAppointmentDelete"    	
+	    	android:src="@drawable/checkmarkok"/>
+	
+		</RelativeLayout>
+	
+</LinearLayout>

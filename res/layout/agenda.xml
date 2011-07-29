@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/rlayAgenda"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="@drawable/gradient_background"
+   android:fadingEdge="none">
+	
+	   <RelativeLayout
+   android:fadingEdge="none"
+   	android:id="@+id/wlll" 
+	android:layout_height="45dip" 
+	android:layout_width="fill_parent"
+	android:background="@layout/header_bar_gradient">
+  
+   	<TextView  
+   		android:id="@+id/title_bar"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/app_name"
+        android:ellipsize="marquee"
+		android:textStyle="bold"
+		android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:paddingLeft="12dip"
+		android:paddingTop="9dip"
+		android:shadowColor="#000000"
+		android:shadowRadius="1"
+		android:shadowDy="-1"
+		android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+		
+	    />
+   	<ImageView
+   		android:id="@+id/header_button_1"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+		android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+        
+	</RelativeLayout>
+
+	<!-- TOP VIEW CONTROL BUTTON -->
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/rlayAgendaTop"
+		android:layout_below="@id/wlll" 
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+		<TextView android:id="@+id/labSelectViewItem"
+			android:singleLine="true" android:layout_alignParentLeft="true"
+     		android:gravity="center_vertical"
+			android:textSize="18dp"
+			android:layout_marginTop="3px" android:layout_marginRight="6px"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textColor="#ffffff"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:shadowColor="#535"
+			android:shadowRadius="1"
+			android:shadowDy="-1"/>
+
+		<view xmlns:android="http://schemas.android.com/apk/res/android" 			
+			class="pl.magot.vetch.ancal.views.ViewImgButton"
+     		style="?android:attr/buttonStyleSmall"
+			android:id="@+id/btnSelectViewItemPrev"
+			android:layout_toRightOf="@+id/labSelectViewItem"
+			android:layout_width="48px" android:layout_height="wrap_content"/> 
+				
+		<Button android:id="@+id/btnSelectViewItemToday" android:text="@string/labSelectItemToday"
+      		style="?android:attr/buttonStyleSmall"
+			android:layout_toRightOf="@+id/btnSelectViewItemPrev"
+			android:layout_toLeftOf="@+id/btnSelectViewItemNext"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+	    		            		            
+		<view xmlns:android="http://schemas.android.com/apk/res/android" 			
+			class="pl.magot.vetch.ancal.views.ViewImgButton"
+      		style="?android:attr/buttonStyleSmall"
+			android:id="@+id/btnSelectViewItemNext"
+			android:layout_alignParentRight="true"
+			android:layout_width="48px" android:layout_height="wrap_content"/>
+							
+	</RelativeLayout>
+
+ 	<!-- CONTENT VIEW -->
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/rlayAgendaView"
+    android:layout_above="@+id/rlayAgendaBottom"
+    android:layout_below="@+id/rlayAgendaTop"    
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1">
+ 
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/llayAgendaData"
+			android:orientation="vertical"
+    	android:gravity="top"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:textColor="#ffffff"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:shadowColor="#535"
+		android:shadowRadius="1"
+		android:shadowDy="-1">
+
+		</LinearLayout>
+	
+	</RelativeLayout>
+			
+	<!-- BOTTOM SELECT VIEW BUTTONS -->
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/rlayAgendaBottom"
+    android:layout_alignParentBottom="true"
+		android:layout_marginTop="8dp"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent" android:layout_height="wrap_content">
+		    
+			<Button android:id="@+id/btnSetViewToday" android:text="@string/labViewToday"
+        style="?android:attr/buttonStyleSmall"
+        android:paddingLeft="12sp" android:paddingRight="12sp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/>		    
+
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    	android:orientation="horizontal" android:layout_width="12dp" android:layout_height="wrap_content"/>
+
+			<Button android:id="@+id/btnSetViewDay" android:text="@string/labViewDay"
+        style="?android:attr/buttonStyleSmall"
+        android:paddingLeft="12sp" android:paddingRight="12sp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/>		    
+
+			<Button android:id="@+id/btnSetViewWeek" android:text="@string/labViewWeek"
+        style="?android:attr/buttonStyleSmall"
+        android:paddingLeft="12sp" android:paddingRight="12sp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/>		    
+
+			<Button android:id="@+id/btnSetViewMonth" android:text="@string/labViewMonth"
+        style="?android:attr/buttonStyleSmall"
+        android:paddingLeft="12sp" android:paddingRight="12sp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/>		    
+	    		    
+		    
+		</LinearLayout>
+		
+	</RelativeLayout>
+
+</RelativeLayout>
