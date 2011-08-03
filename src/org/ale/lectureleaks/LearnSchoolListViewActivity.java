@@ -48,6 +48,11 @@ public class LearnSchoolListViewActivity extends Activity{
         mal = new ArrayList<ArrayList<HashMap<String,String>>>();
         HashMap<String, String> hm = new HashMap<String, String>();
         ArrayList<HashMap<String,String>> al = new ArrayList<HashMap<String,String>>();
+        
+        hm.put("name", "Loading..");
+        hm.put("title", "Loading..");
+        al.add(hm);
+        mal.add(al);
 
         //Setup the adapter views;
         adapter = new LearnAPIArrayListAdapter(this, R.layout.list_view_row);

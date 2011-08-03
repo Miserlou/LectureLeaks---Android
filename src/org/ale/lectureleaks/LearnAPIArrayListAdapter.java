@@ -88,6 +88,9 @@ public class LearnAPIArrayListAdapter extends ArrayAdapter<ArrayList<ArrayList<H
    }
    
    public void setItems(ArrayList<ArrayList<HashMap<String, String>>> al) {
+       if(al == null) {
+           return;
+       }
        if(items == null) {
            items = al;
        }
