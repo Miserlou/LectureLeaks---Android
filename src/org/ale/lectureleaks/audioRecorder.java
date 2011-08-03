@@ -22,6 +22,14 @@ public class audioRecorder {
    */
   public audioRecorder(String path) {
     this.path = sanitizePath(path);
+    
+    System.out.println("yo da parth is");
+    System.out.println("yo da parth is");
+    System.out.println("yo da parth is");
+    System.out.println("yo da parth is");
+    System.out.println("yo da parth is");
+    System.out.println(this.path);
+    
   }
   
   public void setParent(rService arse) {
@@ -43,7 +51,16 @@ public class audioRecorder {
    */
   public void start() throws IOException {
       
-    path = sanitizePath("/recordings/" + System.currentTimeMillis() + ".3gp");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
+      System.out.println("STARTING TO RECORD!");
       
     String state = android.os.Environment.getExternalStorageState();
     if(!state.equals(android.os.Environment.MEDIA_MOUNTED))  {
@@ -52,10 +69,13 @@ public class audioRecorder {
 
     // make sure the directory we plan to store the recording in exists
     File directory = new File(path).getParentFile();
+    
+    System.out.println("DIRECTORY!");
+    System.out.println(directory);
+    
     if (!directory.exists() && !directory.mkdirs()) {
       throw new IOException("Path to file could not be created.");
     }
-    
     
     setPath(path);
     recorder.setAudioSource(MediaRecorder.AudioSource.MIC);

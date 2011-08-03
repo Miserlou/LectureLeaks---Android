@@ -39,9 +39,9 @@ public class rService extends Service{
     private Object[] mStopForegroundArgs = new Object[1];
     
     public String foreground_service_started = "1";
+    public String path = "/lectures/" + System.currentTimeMillis() + ".3gp";
 
-	
-	audioRecorder recorder = new audioRecorder("/lectures/" + System.currentTimeMillis() + ".3gp");
+	audioRecorder recorder = new audioRecorder(path);
 	private boolean running=false;
 	
 	@Override
@@ -79,6 +79,11 @@ public class rService extends Service{
 
 		public boolean running() throws RemoteException {
 			return running;
+		}
+		
+		public String getPath() throws RemoteException {
+            return path;
+		    
 		}
 		
 	};

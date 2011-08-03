@@ -126,6 +126,13 @@ public class LearnListViewActivity extends Activity{
                     startActivity(i);
                     lastTouched = arg1;
                 }
+                else if(shmap.containsKey("title") && shmap.get("title").equals("Your Recordings")){
+                    arg1.setBackgroundResource(R.layout.header_bar_gradient);
+                    Intent i = new Intent(c, LearnYourRecordingsListViewActivity.class);
+                    i.putExtra("title", shmap.get("title"));
+                    startActivity(i);
+                    lastTouched = arg1;
+                }
                 else {
                     arg1.setBackgroundResource(R.layout.header_bar_gradient);
                     Intent i = new Intent(c, AboutActivity.class);

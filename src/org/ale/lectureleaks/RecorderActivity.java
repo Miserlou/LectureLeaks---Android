@@ -33,6 +33,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.view.View;
@@ -60,6 +61,12 @@ public class RecorderActivity extends Activity{
 
         public void onServiceConnected(ComponentName name, IBinder service) {
             r_service = recordService.Stub.asInterface(service);
+            try {
+                r_service.start();
+            } catch (RemoteException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             }
 
         public void onServiceDisconnected(ComponentName name) {
@@ -85,9 +92,9 @@ public class RecorderActivity extends Activity{
         
         TextView titlebar = (TextView)findViewById(R.id.title_bar);
         
-        title = (EditText)findViewById(R.id.username);
-        classcode = (EditText)findViewById(R.id.email);
-        school = (EditText)findViewById(R.id.username);
+        title = (EditText)findViewById(R.id.title);
+        classcode = (EditText)findViewById(R.id.course);
+        school = (EditText)findViewById(R.id.school);
         
         mHandler = new Handler();
         
@@ -104,6 +111,11 @@ public class RecorderActivity extends Activity{
             recButton.setOnClickListener(new OnClickListener() {
                 
                 public void onClick(View v) {
+                    
+                    if((title.getText().toString().equals("")) || (classcode.getText().toString().equals("")) || (school.getText().toString().equals(""))) {
+                        Toast.makeText(c, "Please fill out the required fields.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     
                     if(!recording) {
                         recording = true;
@@ -136,6 +148,7 @@ public class RecorderActivity extends Activity{
                         startService(intent);
                         bindRecordService();
 
+
                     }
                     else {
                         Toast.makeText(c, "Recording saved! Now, please upload it.", Toast.LENGTH_SHORT).show();
@@ -145,12 +158,22 @@ public class RecorderActivity extends Activity{
                         recButton.setText("Recording saved!");
                         recButton.setClickable(false);
                         recButton.setBackgroundColor(Color.rgb(0, 33, 66));
+                        String path;
+                        try {
+                            path = r_service.getPath();
+                        } catch (RemoteException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                            path = "fuck.";
+                        }
+                        System.out.println("Path!");
+                        System.out.println(path);
                         stopService(new Intent(c, rService.class));
                         topRecording++;
-                        editor.putString("rec" + topRecording, "Asdf");
-                        editor.putString("title" + topRecording, "Asdf");
-                        editor.putString("class" + topRecording, "Asdf");
-                        editor.putString("school" + topRecording, "Asdf");
+                        editor.putString("rec" + topRecording, path);
+                        editor.putString("title" + topRecording, title.getText().toString());
+                        editor.putString("class" + topRecording, classcode.getText().toString());
+                        editor.putString("school" + topRecording, school.getText().toString());
                         editor.putInt("top_recording", topRecording);
                         editor.commit();
                     }
