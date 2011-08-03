@@ -70,7 +70,7 @@ public class LearnYourRecordingsListViewActivity extends Activity{
         String schoolio;
         String path;
         
-        for(int i=0;i<topRecording;i++) {
+        for(int i=0;i<=topRecording;i++) {
             hm = new HashMap<String, String>();
             al = new ArrayList<HashMap<String,String>>();
             classcode = prefs.getString("class"+i, "");

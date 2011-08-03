@@ -168,7 +168,14 @@ public class RecorderActivity extends Activity{
                         }
                         System.out.println("Path!");
                         System.out.println(path);
-                        stopService(new Intent(c, rService.class));
+                        try {
+                            r_service.stop();
+                            stopService(new Intent(c, rService.class));
+                        } catch (RemoteException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        
                         topRecording++;
                         editor.putString("rec" + topRecording, path);
                         editor.putString("title" + topRecording, title.getText().toString());
@@ -176,6 +183,7 @@ public class RecorderActivity extends Activity{
                         editor.putString("school" + topRecording, school.getText().toString());
                         editor.putInt("top_recording", topRecording);
                         editor.commit();
+                        
                     }
                     
               
