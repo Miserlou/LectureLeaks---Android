@@ -61,6 +61,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	String title;
 	String model;
 	Boolean doneBuffering = false;
+	Boolean setupAndPlayed = false;
 	
 	private PlayerService p_service;
 	private boolean service_bound = false;
@@ -103,10 +104,16 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
       
     
 	private void onBindComplete(PlayerBinder service) {
+		
+		System.out.println("ON BIND COMPLETE");
+		
 		service.setPlayer(this);
 		startUpdateThread();
 		
+		System.out.println("ON BIND COMPLETE");
+		
 		if(p_service.isPlaying()){
+			System.out.println("Im playing!!");
 			paused = false;
     		 pausePlayButton.setImageResource(R.drawable.play_controls_pause);
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
@@ -121,34 +128,41 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     		 pausePlayButton.setImageResource(R.drawable.play);
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
  	            public void onClick(View v) {
+ 	            	
+ 	            	System.out.println("Settinupandplayed?");
+ 	            	if(!setupAndPlayed){
+ 	            		System.out.println("Yeeee");
+ 	            		setUpAndPlay(streamURL,title);
+ 	            		setupAndPlayed=true;
+ 	            		return;
+ 	            	}
+ 	            	
  	            	p_service._unpause();
 					swapPlayButton();
  	            }
     	 });
     	 }
          
+		System.out.println("ON BIND COMPLETE");
     	 if(p_service != null){
-    		 try {
-				titleView.setText(p_service.getTitle());
-				progressBar.setEnabled(true);
-	 	        int pos = p_service.getPosition();
-		        double ratio = p_service.getDuration() / progressBar.getMax();
-		        double progress = (int) (pos /  ratio);
-		        if(p_service.isPlaying()){
-		        	progressBar.setEnabled(true);
-		        }
-		        progressBar.setProgress((int) progress);
-			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		        progressBar.setEnabled(true);
     	 }
     	
+    	 System.out.println("ON BIND COMPLETE"); 
     	if(p_service != null && !p_service.isPlaying()){
     		paused = true;
    		 	pausePlayButton.setImageResource(R.drawable.play);
    		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
+	            	
+ 	            	System.out.println("Settinupandplayed?");
+ 	            	if(!setupAndPlayed){
+ 	            		System.out.println("Yeeee");
+ 	            		setUpAndPlay(streamURL,title);
+ 	            		setupAndPlayed=true;
+ 	            		return;
+ 	            	}
+	            	
 	            	p_service._unpause();
 				swapPlayButton();
 	            }
@@ -164,10 +178,12 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     TextView totalLength;
     TextView titleView;
     private LinearLayout handle;
-    private TextView titleView2;
     public String school;
     public String subject;
     public String course;
+    public TextView lectureText;
+    public TextView classText;
+    public TextView schoolText;
 
      /** Called when the activity is first created. */ 
      @Override 
@@ -250,15 +266,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 System.out.println("onstart");
     	 startService(new Intent(this, PlayerService.class));
          
-    	 pausePlayButton = (ImageButton)findViewById(R.id.play_pause);
-    	 pausePlayButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if(p_service != null){
-	            	p_service._unpause();
-					swapPlayButton();
-            	}
-            }
-        });
+       pausePlayButton = (ImageButton)findViewById(R.id.play_pause); 
        progressBar = (SeekBar)findViewById(R.id.StreamProgressBar);
        progressBar.setMax(100);
        progressBar.setOnSeekBarChangeListener(this);
@@ -267,10 +275,17 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
        totalLength = (TextView)findViewById(R.id.length);
        
        titleView = (TextView)findViewById(R.id.title_bar);
-       titleView2 = (TextView)findViewById(R.id.num_desc);
-       bindService();
+       lectureText = (TextView)findViewById(R.id.lecture_title);
+       classText = (TextView)findViewById(R.id.class_title);
+       schoolText = (TextView)findViewById(R.id.school_title);
        
-       this.setUpAndPlay(streamURL, title);
+       titleView.setText(title);
+       lectureText.setText(title);
+       classText.setText(course);
+       schoolText.setText(school);
+       
+       //bindService();
+       //this.setUpAndPlay(streamURL, title);
      }
      
      @Override
@@ -283,6 +298,15 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 
     	 pausePlayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	
+            	System.out.println("Settinupandplayed?");
+            	if(!setupAndPlayed){
+            		System.out.println("Yeeee");
+            		setUpAndPlay(streamURL,title);
+            		setupAndPlayed=true;
+            		return;
+            	}
+            	
             	if(p_service != null){
 	            	p_service._unpause();
 					swapPlayButton();
@@ -292,16 +316,27 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 
     	if(p_service != null){
 	    	if(!p_service.isPlaying()){
+	    		System.out.println("I AM NOT PLAYING");
 	    		paused = true;
 	   		 	pausePlayButton.setImageResource(R.drawable.play);
 	   		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
 		            public void onClick(View v) {
+		            	
+		            	System.out.println("Settinupandplayed?");
+		            	if(!setupAndPlayed){
+		            		System.out.println("Yeeee");
+		            		setUpAndPlay(streamURL,title);
+		            		setupAndPlayed=true;
+		            		return;
+		            	}
+		            	
 		            	p_service._unpause();
 		            	swapPlayButton();
 		            }
 	   		 	});
 	    	}
 	    	else{
+	    		System.out.println("I AM PLAYING");
 	    		paused = false;
 	   		 	pausePlayButton.setImageResource(R.drawable.pause);
 	   		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
@@ -312,17 +347,9 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	   		 	});
 	    	}
     	}
-         
-    	 if(p_service != null){ 
-    		 progressBar.setEnabled(true);
-    		 try {
-				titleView.setText(p_service.getTitle());
-    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
-			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	 }
+    	else{
+    		System.out.println("NULL PS");
+    	}
        
        	 if(uHandle == null){
        		 uHandle = new UpdateHandler();
@@ -359,6 +386,15 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     		 pausePlayButton.setImageResource(R.drawable.play);
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
  	            public void onClick(View v) {
+ 	            	
+ 	            	System.out.println("Settinupandplayed?");
+ 	            	if(!setupAndPlayed){
+ 	            		System.out.println("Yeeee");
+ 	            		setUpAndPlay(streamURL,title);
+ 	            		setupAndPlayed=true;
+ 	            		return;
+ 	            	}
+ 	            	
  	            	p_service._unpause();
 					swapPlayButton();
  	            }
@@ -375,6 +411,8 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	  
      
      public void updateProgress() {
+    	 
+    	 
     	    try {
     	      if (p_service.isPlaying()) {
     	        //int progress = 100 * p_service.getPosition() / p_service.getDuration();
@@ -389,7 +427,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      
      public void play(){
     	 
-    	 bindService();
+    	 //bindService();
          
          final Handler mHandler = new Handler();
          final Runnable getService = new Runnable() {
@@ -632,12 +670,12 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	    	        
 	    	        try {
 						titleView.setText(p_service.getTitle());
-    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
 					} catch (RemoteException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
+	    	        System.out.println("UPDATING PLAY TIME");
 					pausePlayButton.setImageResource(R.drawable.play_controls_pause);
 					
 	    	      }
@@ -659,6 +697,8 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      
      public void setUpAndPlay(String streamUrl, String title) { 
          
+    	 System.out.println("Settingupandplaying");
+    	 
     	 this.streamURL = streamUrl; 
     	 this.title = title; 
     	 try {
@@ -675,10 +715,21 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 );
      }
      
+     public void setUp(String streamUrl, String title) { 
+         
+    	 this.streamURL = streamUrl; 
+    	 this.title = title; 
+    	 try {
+    		if(p_service != null && streamUrl.contains("http")){ 
+			p_service.pause();}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+     }
+     
      public void setTitleViewText(String s){
     	 this.title = s;
     	 titleView.setText(this.title);
-    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
      }
      	
      class ListenBroadcastReceiver extends BroadcastReceiver {
@@ -690,7 +741,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	      id = intent.getStringExtra("id"); 
 
     	      titleView.setText(title);
-    	      titleView2.setText(title + " - " + school + " - " + subject + " - " + course);
     	      swapPlayButton();
     	      
     	      //XXX: THIS NEEDS THREADING!

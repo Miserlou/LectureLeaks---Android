@@ -63,11 +63,37 @@
 	    >    
     
 	<TextView  
-	    android:id="@+id/num_desc"
+	    android:id="@+id/lecture_title"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:textAppearance="?android:attr/textAppearanceLarge"
+	    android:text="\nLecture Title"
+	    android:textColor="#fff"
+	    android:padding="9dip"
+	    android:shadowColor="#333"
+		android:shadowRadius="1"
+		android:shadowDy="-1"
+		android:textStyle="bold"
+    />
+    	<TextView  
+	    android:id="@+id/class_title"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"
 	    android:textAppearance="?android:attr/textAppearanceMedium"
-	    android:text="\nWhat is this lecture's title?"
+	    android:text="\nClass Title"
+	    android:textColor="#fff"
+	    android:padding="9dip"
+	    android:shadowColor="#333"
+		android:shadowRadius="1"
+		android:shadowDy="-1"
+		android:textStyle="bold"
+    />
+        	<TextView  
+	    android:id="@+id/school_title"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+	    android:text="\nSchool Title"
 	    android:textColor="#fff"
 	    android:padding="9dip"
 	    android:shadowColor="#333"
@@ -86,7 +112,8 @@
         android:layout_width="fill_parent"
         android:layout_weight="1.0" 
         android:layout_marginTop="2dip"
-        android:paddingLeft="10dip"></SeekBar>
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"></SeekBar>
     
     <ImageButton
     	android:id="@+id/play_pause"
@@ -102,7 +129,8 @@
 		android:padding="12dip"
 		android:layout_marginLeft="10dip"
 		android:layout_marginRight="10dip"
-		android:layout_marginTop="8dip"
+		android:layout_marginTop="16dip"
+		android:src="@drawable/play"
     ></ImageButton>
 
     	<LinearLayout 
@@ -140,7 +168,7 @@
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content"
 		    android:textAppearance="?android:attr/textAppearanceSmall"
-		    android:text="):00"
+		    android:text="0:00"
 		    android:textColor="#000000"
 		    android:padding="7dip"
 	        android:gravity="center"
