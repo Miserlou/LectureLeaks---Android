@@ -31,6 +31,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -40,6 +41,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -56,6 +58,7 @@ public class RecorderActivity extends Activity{
     EditText title;
     EditText classcode;
     EditText school;
+    CheckBox checkbox;
     recordService r_service;
     private ServiceConnection r_connection = new ServiceConnection(){
 
@@ -73,6 +76,24 @@ public class RecorderActivity extends Activity{
             r_service = null;
             }
     };
+    
+    uploadService u_service;
+    private boolean u_servicedBind = false;
+	
+    private ServiceConnection u_connection = new ServiceConnection(){
+
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            u_service = uploadService.Stub.asInterface(service);
+            System.out.println("onServiceConnected");
+            }
+
+        public void onServiceDisconnected(ComponentName name) {
+            System.out.println("onServiceDisConnected");
+            u_service = null;
+            }
+    };
+	
+    
     private boolean r_servicedBind;
     private boolean recording = false;
     TimerTask updateRec;
@@ -100,6 +121,7 @@ public class RecorderActivity extends Activity{
         
         final Context c = this;
         
+        checkbox = (CheckBox) findViewById(R.id.checkbox);
         final Button recButton = (Button)findViewById(R.id.record_button);
         recButton.setVisibility(View.GONE);
         final TextView recTime = (TextView)findViewById(R.id.rec_time);
@@ -166,8 +188,6 @@ public class RecorderActivity extends Activity{
                             e.printStackTrace();
                             path = "fuck.";
                         }
-                        System.out.println("Path!");
-                        System.out.println(path);
                         try {
                             r_service.stop();
                             stopService(new Intent(c, rService.class));
@@ -177,7 +197,7 @@ public class RecorderActivity extends Activity{
                         }
                         
                         topRecording++;
-                        editor.putString("rec" + topRecording, path);
+                        editor.putString("rec" + topRecording, Environment.getExternalStorageDirectory().getAbsolutePath() + path);
                         editor.putString("title" + topRecording, title.getText().toString());
                         editor.putString("class" + topRecording, classcode.getText().toString());
                         editor.putString("school" + topRecording, school.getText().toString());
@@ -194,15 +214,56 @@ public class RecorderActivity extends Activity{
         sendButton.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
+            	
+            	if(!checkbox.isChecked()){
+            		return;
+            	}
+            	
+                if((title.getText().toString().equals("")) || (classcode.getText().toString().equals("")) || (school.getText().toString().equals(""))) {
+                    Toast.makeText(c, "Please fill out the required fields.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            	
+            	sendButton.setClickable(false);
+            	sendButton.setBackgroundColor(Color.rgb(0, 33, 66));
+		        
+            	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		        
+		        final SharedPreferences.Editor editor = prefs.edit();
+		        editor.putString("class", classcode.getText().toString());
+		        editor.putString("school", school.getText().toString());
+	            editor.putString("title", title.getText().toString());
+	            
+		        editor.commit();
+				
+				Handler mHandler = new Handler();
+				mHandler.postDelayed(new Runnable(){
 
+					public void run() {
+						
+					    try {
+                            u_service.start();
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+					    
+				
+					}}, 200);
+            	
                 }});
         
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         topRecording = prefs.getInt("top_recording", 0);
         editor = prefs.edit();
         
-        }
-    
+        startService(new Intent(this, uService.class));
+        bindUploadService();
+	}
+	
+  private void bindUploadService(){
+      u_servicedBind = bindService(new Intent(this, uService.class), 
+              u_connection, Context.BIND_AUTO_CREATE);
+  }
     
 private void bindRecordService(){
     r_servicedBind = bindService(new Intent(this, rService.class), 
