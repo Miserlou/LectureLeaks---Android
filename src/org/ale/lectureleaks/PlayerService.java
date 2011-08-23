@@ -249,6 +249,7 @@ public class PlayerService extends Service implements OnBufferingUpdateListener,
             notificationIntent.putExtra("School", parent.school);
             notificationIntent.putExtra("Subject", parent.subject);
             notificationIntent.putExtra("Course", parent.course);
+            notificationIntent.putExtra("streamURL", parent.streamURL);
 		    contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		    update_notification();
 			listen(stream, true);
