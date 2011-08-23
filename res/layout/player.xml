@@ -113,7 +113,8 @@
         android:layout_weight="1.0" 
         android:layout_marginTop="2dip"
         android:paddingLeft="10dip"
-        android:paddingRight="10dip"></SeekBar>
+        android:paddingRight="10dip"
+        android:paddingTop="50dip"></SeekBar>
     
     <ImageButton
     	android:id="@+id/play_pause"

@@ -240,10 +240,15 @@ public class PlayerService extends Service implements OnBufferingUpdateListener,
 			isAudioExtra = false;
 			isRadioEpisode = true;
 			isLocal = false;
-		    notificationIntent = new Intent(this, MainMenuActivity.class);
+		    notificationIntent = new Intent(this, PlayerActivity.class); 
 //		    notificationIntent.putExtra("id", new Integer(id).toString());
 //		    notificationIntent.putExtra("listType", "AllShows"); 
-//		    notificationIntent.putExtra("queryInfo",""); 
+//		    notificationIntent.putExtra("queryInfo","");
+		    notificationIntent.putExtra("setup", true);
+            notificationIntent.putExtra("title",parent.title);
+            notificationIntent.putExtra("School", parent.school);
+            notificationIntent.putExtra("Subject", parent.subject);
+            notificationIntent.putExtra("Course", parent.course);
 		    contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		    update_notification();
 			listen(stream, true);
@@ -619,25 +624,25 @@ public class PlayerService extends Service implements OnBufferingUpdateListener,
 	
 	public void update_notification(){
 	    
-//		if (notification == null){
-//			notification = new Notification(R.drawable.icon, "Playing.." , System.currentTimeMillis());}
-//		
-//		notification.flags |= Notification.FLAG_ONGOING_EVENT;
-//		
-////		if(contentView == null){
-////			contentView = new RemoteViews(getPackageName(), R.layout.playing);
-////			contentView.setImageViewResource(R.id.notificationimage, R.drawable.icon);
-////		}
-////		
-//		if(notificationIntent == null){
-//			 notificationIntent = new Intent(this, PlayerActivity.class);
-//			 contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-//		}
-//		
-//		contentView.setTextViewText(R.id.text, title);
-//		notification.contentView = contentView;
-//		notification.contentIntent = contentIntent;
-//		mNotificationManager.notify(60666, notification);
+		if (notification == null){
+			notification = new Notification(R.drawable.icon, "Playing.." , System.currentTimeMillis());}
+		
+		notification.flags |= Notification.FLAG_ONGOING_EVENT;
+		
+		if(contentView == null){
+			contentView = new RemoteViews(getPackageName(), R.layout.playing);
+			contentView.setImageViewResource(R.id.notificationimage, R.drawable.icon);
+		}
+		
+		if(notificationIntent == null){
+			 notificationIntent = new Intent(this, PlayerActivity.class);
+			 contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+		}
+		
+		contentView.setTextViewText(R.id.text, title);
+		notification.contentView = contentView;
+		notification.contentIntent = contentIntent;
+		mNotificationManager.notify(60666, notification);
 	}
 
 	  public void onBufferingUpdate(MediaPlayer arg0, int arg1) {

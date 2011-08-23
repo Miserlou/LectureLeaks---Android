@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="3dp"
+              >
+    
+    <ImageView android:id="@+id/notificationimage"
+              android:layout_width="wrap_content"
+              android:layout_height="fill_parent"
+              android:layout_marginRight="10dp"
+              android:src="@drawable/logo"
+              />
+              
+   <TextView android:id="@+id/taltitle"
+		android:layout_toRightOf="@id/notificationimage"
+		android:padding="6px"
+		android:text="LectureLeaks"
+		android:textStyle="bold"
+		android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:maxLines="1"
+		android:textColor="#000"
+		android:gravity="center" 
+		android:textAppearance="?android:attr/textAppearanceMedium"
+              /> 
+        
+	<TextView android:id="@+id/text"
+		android:layout_toRightOf="@id/notificationimage"
+		android:layout_below="@id/taltitle"
+		android:padding="1px"
+		android:text="I'm playing! Click me! Change this text!!"
+		android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:maxLines="1"
+		android:textColor="#000"
+		android:gravity="center" 
+              />
+              
+</RelativeLayout>

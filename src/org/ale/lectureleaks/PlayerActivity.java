@@ -207,6 +207,10 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
               school = getIntent().getStringExtra("School");
               subject  = getIntent().getStringExtra("Subject");
               course = getIntent().getStringExtra("Course");
+              boolean b = getIntent().getBooleanExtra("setup", false);
+              if(b){
+            	  setupAndPlayed=true;
+              }
         	  
           }
           catch(Exception e){
