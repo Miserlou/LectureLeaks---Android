@@ -13,4 +13,12 @@
 				android:src="@drawable/logo3big"
 				android:paddingTop="100dip">
 			</ImageView>
+			<ImageView
+				android:id="@+id/ow"
+				android:layout_width="wrap_content"
+				android:src="@drawable/ow"
+				android:layout_gravity="center"
+				android:paddingTop="200dip" 
+				android:layout_height="wrap_content">
+			</ImageView>
 </LinearLayout>
