@@ -256,6 +256,12 @@ public class RecorderActivity extends Activity{
         topRecording = prefs.getInt("top_recording", 0);
         editor = prefs.edit();
         
+        String s = prefs.getString("da_school", null);
+        
+        if(s!=null){
+        	school.setText(s);
+        }
+        
         startService(new Intent(this, uService.class));
         bindUploadService();
 	}

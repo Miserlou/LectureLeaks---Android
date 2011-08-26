@@ -60,8 +60,8 @@ public class uService extends Service{
     String school = "";
     String classcode = "";
     String location = "XXX Unavailable XXX";
-    String secUrlServer = "https://lectureleaks.com/uploadnocaptcha/";
-    String urlServer = "http://lectureleaks.com/uploadnocaptcha/";
+    String secUrlServer = "https://lectureleaks.org/uploadnocaptcha/";
+    String urlServer = "http://lectureleaks.org/uploadnocaptcha/";
     String lineEnd = "\r\n";
     String twoHyphens = "--";
     String boundary =  "*****";

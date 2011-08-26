@@ -6,6 +6,8 @@ import java.util.List;
 import pl.magot.vetch.ancal.AnCal;
 
 import android.app.ActivityGroup;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -53,6 +56,45 @@ public class MainMenuActivity extends ActivityGroup {
                 Intent i = new Intent(MainMenuActivity.this, listItems.get((arg2)).getLaunchTo());
                 startActivity(i);
             }});
+        
+        prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        
+        final SharedPreferences.Editor editor2;
+        String first = prefs.getString("first_time", "feck");
+        if(first.contains("feck")){
+        	
+            editor2 = prefs.edit();
+            editor2.putString("first_time", "shitballs");
+            editor2.commit();
+        	
+        	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        	alert.setTitle("Welcome to LectureLeaks!");
+        	alert.setMessage("LectureLeaks lets you record, share and listen to your university lectures.\n\nIf you're a student, please enter the school you attend - this helps you categorize your lectures.");
+
+        	// Set an EditText view to get user input 
+        	final EditText input = new EditText(this);
+        	input.setHint("ex: Boston University");
+        	alert.setView(input);
+
+        	alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        	public void onClick(DialogInterface dialog, int whichButton) {
+        	  String value = input.getText().toString();
+        	  editor2.putString("da_school", value);
+        	  editor2.commit();
+        	  }
+        	});
+
+        	alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        	  public void onClick(DialogInterface dialog, int whichButton) {
+        	    // Canceled.
+        	  }
+        	});
+
+        	alert.show();
+            
+           
+        }
         
     }
     

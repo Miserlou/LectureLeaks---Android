@@ -71,7 +71,15 @@ public class LearnListViewActivity extends Activity{
         
         hm = new HashMap<String, String>();
         al = new ArrayList<HashMap<String,String>>();
-        hm.put("description", "Massachusettes Institute of Technology");
+        hm.put("description", "Harvard University");
+        hm.put("title", "Harvard");
+        hm.put("featured", "true");
+        al.add(hm);
+        mal.add(al);
+        
+        hm = new HashMap<String, String>();
+        al = new ArrayList<HashMap<String,String>>();
+        hm.put("description", "Massachusetts Institute Of Technology");
         hm.put("title", "MIT");
         hm.put("featured", "true");
         al.add(hm);
@@ -135,8 +143,8 @@ public class LearnListViewActivity extends Activity{
                 }
                 else {
                     arg1.setBackgroundResource(R.layout.header_bar_gradient);
-                    Intent i = new Intent(c, AboutActivity.class);
-                    i.putExtra("title", shmap.get("title"));
+                    Intent i = new Intent(c, LearnSchoolListViewActivity.class);
+                    i.putExtra("School", shmap.get("description"));
                     i.putExtra("body_text", shmap.get("full_text"));
                     startActivity(i);
                     lastTouched = arg1;

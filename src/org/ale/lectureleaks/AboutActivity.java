@@ -38,11 +38,30 @@ public class AboutActivity extends Activity{
           b = (Button) findViewById(R.id.post_button);
           p = (ProgressBar) findViewById(R.id.progressbar);
           
-	      lead.setText("Welcome to LectureLeaks.org, your personal open courseware repository.  You can now record, save, and upload your college lectures directly from your iPhone, or Android device.  You can also browse our library of lecture recordings to satisfy your curiosity any time, anywhere.\n" + 
-	      		"\n" + 
-	      		"Begin recording with a click or tap, then share your lessons with some basic details about the class.  By contributing to Lecture Leaks you are helping yourself and others gain access to knowledge.  If you choose to share your recordings, we will never expose your identity to anyone for any reason.  We also respect the privacy and copyright concerns of professors.  So please ask permission of anyone whose lessons you plan to record and keep a local copy of anything you post online.  We will always comply with legitimate DMCA take-down requests and post the details on ChillingEffects.org.\n" + 
-	      		"\n" + 
-	      		"Now, you can spread knowledge from the privileged few to curious minds everywhere.  Thank you for helping us open access to higher education.  Together we can disrupt the ivory tower's monopoly on learning and help all people exercise their fundamental human right to education. ");
+	      lead.setText("Welcome to LectureLeaks.org, your personal OpenCourseWare repository." + 
+	    		  "\n\nYou can now record, save, and upload your college lectures directly " + 
+	    		  "from your iPhone or Android device.  You can also browse our library " + 
+	    		  "of recordings and learn any time, anywhere." + 
+
+	    		  "\n\nWe believe that higher education should be available to all, for the " + 
+	    		  "good of society. Anybody who wants to learn should be able to, so" + 
+	    		  "we're trying to develop technology which allows that." + 
+
+	    		  "\n\nBegin recording by pressing Record during all of your lectures, then " + 
+	    		  "upload them to us so we can share them with the rest of the world." + 
+
+	    		  "\n\nBefore sharing any recordings, we encourage you to ask your " + 
+	    		  "instructor's permission.  We are affirmative for open access "  + 
+	    		  "education, but we also maintain full compliance with the law (see our " + 
+	    		  "website for more details.)" + 
+
+	    		  "\n\nAll recordings are released under the Creative-Commons Attribution " + 
+	    		  "license, and our server doesn't record any personally identifying " + 
+	    		  "information like IP addresses." + 
+
+	    		  "\n\nLectureLeaks is a 100% Free and Open Source Project, and uses " + 
+	    		  "technology produced by the OpenWatch Project. Only you can spread knowledge from the privileged few to curious minds " + 
+	    		  "everywhere, one lecture at a time. \n\n- Rich, Andrew and Chris, August 2011.");
 
 	}
 	
