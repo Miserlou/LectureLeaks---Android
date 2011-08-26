@@ -104,22 +104,18 @@ public class uService extends Service{
 
     public void upload() {
         setDataFromPrefs();
-        //setDataFromPath();
 
         try {
-        		System.out.println("Oattttttasdsdt to your foar f");
-        		System.out.println(pathToOurFile);
+
         		File f = new File(pathToOurFile);
-        		System.out.println(f.isFile());
-        		System.out.println(f.canRead());
                 InputStream serverInput = ClientHttpRequest.post(
                         new java.net.URL(urlServer), 
                         new Object[] {
                                       "name", title,
                                       "school", school,
                                       "course", classcode,
-                                      "desc", "no desc",
                                       "professor", "no prof",
+                                      "subject", "no subj",
                                       "doc_file", f
                                      });
             } catch (MalformedURLException e) {

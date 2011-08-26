@@ -80,7 +80,16 @@ public class MainMenuActivity extends ActivityGroup {
         	alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
         	public void onClick(DialogInterface dialog, int whichButton) {
         	  String value = input.getText().toString();
-        	  editor2.putString("da_school", value);
+        	  final StringBuilder result = new StringBuilder(value.length());
+        	  String[] words = value.split("\\s");
+        	  for(int i=0,l=words.length;i<l;++i) {
+        	    if(i>0) result.append(" ");      
+        	    result.append(Character.toUpperCase(words[i].charAt(0)))
+        	          .append(words[i].substring(1));
+
+        	  }
+
+        	  editor2.putString("da_school", new String(result));
         	  editor2.commit();
         	  }
         	});

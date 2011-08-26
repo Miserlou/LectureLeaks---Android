@@ -184,7 +184,6 @@ public class RecorderActivity extends Activity{
                         try {
                             path = r_service.getPath();
                         } catch (RemoteException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                             path = "fuck.";
                         }
@@ -192,7 +191,6 @@ public class RecorderActivity extends Activity{
                             r_service.stop();
                             stopService(new Intent(c, rService.class));
                         } catch (RemoteException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
                         
