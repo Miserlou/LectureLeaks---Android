@@ -58,8 +58,6 @@ public class LearnCourseListViewActivity extends Activity{
 
         //Setup the adapter views;
         adapter = new LearnAPIArrayListAdapter(this, R.layout.list_view_row);
-        System.out.println(al.size());
-        System.out.println(al);
         adapter.setItems(mal);
         adapter.setContext(getBaseContext());
         adapter.setParent(this);
@@ -97,7 +95,6 @@ public class LearnCourseListViewActivity extends Activity{
         getDataTask.setParser(new LectureLeaksJSONParser("SCHOOLS"));
         u = "http://lectureleaks.org/api4/school/" + school + "/subject/" + subject + "/course/" + course;
         getDataTask.execute(u, school);
-        System.out.println("Exing");
         
     }
     

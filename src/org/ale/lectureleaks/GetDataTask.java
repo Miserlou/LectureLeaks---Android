@@ -27,15 +27,12 @@ public class GetDataTask extends AsyncTask<String, String, String>{
     
     @Override
     protected String doInBackground(String... urls) {
-        System.out.println(urls[0]);
         
         try {
             resultString = Utilities.queryRESTurl(urls[0]);
-            System.out.println("Got result: " + resultString);
             Utilities.writeStringToFile(urls[1], resultString, c);
         }
         catch(Exception e){
-            System.out.println(e);
             return null;
         }
         return null;
@@ -53,7 +50,6 @@ public class GetDataTask extends AsyncTask<String, String, String>{
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            System.out.println(rezz);
             if(adapter!=null) {
                 adapter.setItems(rezz);
                 //Yuck.

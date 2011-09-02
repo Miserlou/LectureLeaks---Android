@@ -27,8 +27,6 @@ public class LectureLeaksJSONParser implements ParserInterface {
         String s;
         String ss;
         
-        System.out.println(input);
-        
         JSONArray root = new JSONArray(input);
         JSONObject fields;
         Iterator<String> baseIterator;
@@ -41,8 +39,6 @@ public class LectureLeaksJSONParser implements ParserInterface {
             baseIterator = p.keys();
             while(baseIterator.hasNext()) {
                 s = (String) baseIterator.next();
-                System.out.println("S IS");
-                System.out.println(s);
                 if(s.equals("fields")) {
                     fields = p.getJSONObject(s);
                     fieldsIterator = fields.keys();

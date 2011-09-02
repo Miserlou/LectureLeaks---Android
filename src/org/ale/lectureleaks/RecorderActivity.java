@@ -84,11 +84,9 @@ public class RecorderActivity extends Activity{
 
         public void onServiceConnected(ComponentName name, IBinder service) {
             u_service = uploadService.Stub.asInterface(service);
-            System.out.println("onServiceConnected");
             }
 
         public void onServiceDisconnected(ComponentName name) {
-            System.out.println("onServiceDisConnected");
             u_service = null;
             }
     };

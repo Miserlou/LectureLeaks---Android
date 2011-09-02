@@ -209,7 +209,6 @@ public class uService extends Service{
 //        }
         
         
-        System.out.println("Cancelling notification.");
         if(mNotificationManager != null){
             mNotificationManager.cancel(60606);
             done_notification();
@@ -258,7 +257,6 @@ public class uService extends Service{
 
     @Override
     public IBinder onBind(Intent intent) {
-        System.out.println("Onbinding!!!");
         return m_binder;
     }
     

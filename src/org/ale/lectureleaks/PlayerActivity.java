@@ -105,15 +105,10 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     
 	private void onBindComplete(PlayerBinder service) {
 		
-		System.out.println("ON BIND COMPLETE");
-		
 		service.setPlayer(this);
 		startUpdateThread();
 		
-		System.out.println("ON BIND COMPLETE");
-		
 		if(p_service.isPlaying()){
-			System.out.println("Im playing!!");
 			paused = false;
     		 pausePlayButton.setImageResource(R.drawable.play_controls_pause);
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
@@ -129,9 +124,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
  	            public void onClick(View v) {
  	            	
- 	            	System.out.println("Settinupandplayed?");
  	            	if(!setupAndPlayed){
- 	            		System.out.println("Yeeee");
  	            		setUpAndPlay(streamURL,title);
  	            		setupAndPlayed=true;
  	            		return;
@@ -143,21 +136,17 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 });
     	 }
          
-		System.out.println("ON BIND COMPLETE");
     	 if(p_service != null){
 		        progressBar.setEnabled(true);
     	 }
     	
-    	 System.out.println("ON BIND COMPLETE"); 
     	if(p_service != null && !p_service.isPlaying()){
     		paused = true;
    		 	pausePlayButton.setImageResource(R.drawable.play);
    		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	
- 	            	System.out.println("Settinupandplayed?");
  	            	if(!setupAndPlayed){
- 	            		System.out.println("Yeeee");
  	            		setUpAndPlay(streamURL,title);
  	            		setupAndPlayed=true;
  	            		return;
@@ -267,7 +256,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      public void onStart(){
     	 super.onStart();
 
-    	 System.out.println("onstart");
     	 startService(new Intent(this, PlayerService.class));
          
        pausePlayButton = (ImageButton)findViewById(R.id.play_pause); 
@@ -296,16 +284,13 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      public void onResume(){
     	 super.onResume();
 
-    	 System.out.println("onresume");
     	 bindService();
          registerReceiver(receiver, new IntentFilter(this.getClass().getName()));
     	 
     	 pausePlayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	
-            	System.out.println("Settinupandplayed?");
             	if(!setupAndPlayed){
-            		System.out.println("Yeeee");
             		setUpAndPlay(streamURL,title);
             		setupAndPlayed=true;
             		return;
@@ -320,15 +305,12 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     	 
     	if(p_service != null){
 	    	if(!p_service.isPlaying()){
-	    		System.out.println("I AM NOT PLAYING");
 	    		paused = true;
 	   		 	pausePlayButton.setImageResource(R.drawable.play);
 	   		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
 		            public void onClick(View v) {
 		            	
-		            	System.out.println("Settinupandplayed?");
 		            	if(!setupAndPlayed){
-		            		System.out.println("Yeeee");
 		            		setUpAndPlay(streamURL,title);
 		            		setupAndPlayed=true;
 		            		return;
@@ -340,7 +322,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	   		 	});
 	    	}
 	    	else{
-	    		System.out.println("I AM PLAYING");
 	    		paused = false;
 	   		 	pausePlayButton.setImageResource(R.drawable.pause);
 	   		 	pausePlayButton.setOnClickListener(new View.OnClickListener() {
@@ -352,7 +333,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 	    	}
     	}
     	else{
-    		System.out.println("NULL PS");
     	}
        
        	 if(uHandle == null){
@@ -391,9 +371,7 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
     		 pausePlayButton.setOnClickListener(new View.OnClickListener() {
  	            public void onClick(View v) {
  	            	
- 	            	System.out.println("Settinupandplayed?");
  	            	if(!setupAndPlayed){
- 	            		System.out.println("Yeeee");
  	            		setUpAndPlay(streamURL,title);
  	            		setupAndPlayed=true;
  	            		return;
@@ -530,7 +508,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      public void onPause(){
      	super.onPause();
      	
-     	System.out.println("onpausing");
      	
      	onPaused = true;
      	
@@ -679,7 +656,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
 						e.printStackTrace();
 					}
 					
-	    	        System.out.println("UPDATING PLAY TIME");
 					pausePlayButton.setImageResource(R.drawable.play_controls_pause);
 					
 	    	      }
@@ -701,7 +677,6 @@ OnInfoListener, OnSeekBarChangeListener, OnPreparedListener {
      
      public void setUpAndPlay(String streamUrl, String title) { 
          
-    	 System.out.println("Settingupandplaying");
     	 
     	 this.streamURL = streamUrl; 
     	 this.title = title; 

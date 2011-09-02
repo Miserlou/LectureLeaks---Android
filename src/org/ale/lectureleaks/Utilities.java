@@ -24,13 +24,11 @@ import android.content.res.AssetManager;
 public class Utilities {
    
     public static String queryRESTurl(String url) {
-        System.out.println("Quering RESTUrl");
         HttpClient httpclient = new DefaultHttpClient();
         
         url = url.replace(" ", "%20");
         
         HttpGet httpget = new HttpGet(url);
-        System.out.println(url);
         HttpResponse response;
         
         try {
@@ -52,7 +50,6 @@ public class Utilities {
     }
     
     public static String queryRESTurlWithParams(String url, HashMap<String, String> params) {
-        System.out.println("Quering RESTUrl");
         HttpClient httpclient = new DefaultHttpClient();
         HttpGet httpget = new HttpGet(url);
         HttpParams p = httpget.getParams();
@@ -61,7 +58,6 @@ public class Utilities {
         String s = "";
         while(i.hasNext()) {
             s = (String) i.next();
-            System.out.println(s + ": " + params.get(s));
             p.setParameter(s, params.get(s));
         }
         httpget.setParams(p);
@@ -69,9 +65,6 @@ public class Utilities {
         HttpResponse response;
         
         try {
-            System.out.println(httpget);
-            System.out.println(httpget.getURI());
-            System.out.println(httpget.getParams());
             response = httpclient.execute(httpget);
             HttpEntity entity = response.getEntity();
             if (entity != null) {
@@ -117,7 +110,6 @@ public class Utilities {
     }
     
     public static void writeStringToFile(String filename, String contents, Context c) {
-        System.out.println("Writing to local file: " + filename); 
         
         // Something's gone wrong.
         if(contents == null || contents == "")
@@ -142,7 +134,6 @@ public class Utilities {
     }
     
     public static String readStringFromFile(String filename, Context c) {
-        System.out.println("Reading from local file: " + filename); 
         InputStream fis;
         try {
             fis = c.openFileInput(filename);

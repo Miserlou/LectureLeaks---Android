@@ -54,8 +54,6 @@ public class LearnSubListViewActivity extends Activity{
 
         //Setup the adapter views;
         adapter = new LearnAPIArrayListAdapter(this, R.layout.list_view_row);
-        System.out.println(al.size());
-        System.out.println(al);
         adapter.setItems(mal);
         adapter.setContext(getBaseContext());
         adapter.setParent(this);
