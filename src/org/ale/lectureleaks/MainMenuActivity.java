@@ -1,5 +1,9 @@
 package org.ale.lectureleaks;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,12 +11,17 @@ import pl.magot.vetch.ancal.AnCal;
 
 import android.app.ActivityGroup;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -21,6 +30,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -143,6 +153,30 @@ public class MainMenuActivity extends ActivityGroup {
         }
         
         
+    }
+    
+@Override public boolean onCreateOptionsMenu(Menu menu) {
+        
+        MenuItem mi = menu.add(0,0,0,"Give Feedback");
+        mi.setIcon(android.R.drawable.ic_menu_send);
+        return super.onCreateOptionsMenu(menu);
+    }
+    
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        
+
+        switch (item.getItemId()) {
+            case 0:
+                final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+                emailIntent .setType("plain/text");
+                emailIntent .putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"lectureleaks@gmail.com"});
+                emailIntent .putExtra(android.content.Intent.EXTRA_SUBJECT, "[Android] Feedback!");
+                emailIntent .putExtra(android.content.Intent.EXTRA_TEXT, "");
+                startActivity(Intent.createChooser(emailIntent, "Send feedback..."));
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     
 }
