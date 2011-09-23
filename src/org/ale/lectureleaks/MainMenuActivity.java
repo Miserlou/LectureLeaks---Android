@@ -80,6 +80,9 @@ public class MainMenuActivity extends ActivityGroup {
         	alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
         	public void onClick(DialogInterface dialog, int whichButton) {
         	  String value = input.getText().toString();
+        	  if(value.equals("")){
+        		  return;
+        	  }
         	  final StringBuilder result = new StringBuilder(value.length());
         	  String[] words = value.split("\\s");
         	  for(int i=0,l=words.length;i<l;++i) {

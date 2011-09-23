@@ -57,8 +57,10 @@ public class audioRecorder {
     
     setPath(path);
     recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-    recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-    recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+    recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+    recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+    recorder.setAudioSamplingRate(44100);
+    recorder.setAudioEncodingBitRate(44100);
     recorder.setOutputFile(path);
     recorder.prepare();
     recorder.start();

@@ -20,8 +20,10 @@ import org.ale.lectureleaks.rService;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -260,6 +262,31 @@ public class RecorderActivity extends Activity{
         
         startService(new Intent(this, uService.class));
         bindUploadService();
+        
+        final SharedPreferences.Editor editor2;
+        String first = prefs.getString("first_time_rec", "feck");
+        if(first.contains("feck")){
+        	
+            editor2 = prefs.edit();
+            editor2.putString("first_time_rec", "shitballs");
+            editor2.commit();
+        	
+        	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        	alert.setTitle("Please describe this class!");
+        	alert.setMessage("Please be as specific as possible when describing this lecture.\n\nIt makes our lives a whole lot easier when we are cataloging the data we receive. I know it's annoying to type on a phone, but it's worth it because it lets more people learn from this lecture. \n\nThank you!");
+
+        	alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        	public void onClick(DialogInterface dialog, int whichButton) {
+        		return;
+
+        	  }
+        	});
+
+        	alert.show();
+            
+           
+        }
 	}
 	
   private void bindUploadService(){

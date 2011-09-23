@@ -9,14 +9,19 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
@@ -46,6 +51,20 @@ public class LearnYourRecordingsListViewActivity extends Activity{
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     int topRecording;
+    
+    uploadService u_service;
+    private boolean u_servicedBind = false;
+	
+    private ServiceConnection u_connection = new ServiceConnection(){
+
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            u_service = uploadService.Stub.asInterface(service);
+            }
+
+        public void onServiceDisconnected(ComponentName name) {
+            u_service = null;
+            }
+    };
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,8 +101,9 @@ public class LearnYourRecordingsListViewActivity extends Activity{
             hm.put("school", schoolio);
             hm.put("class", classcode);
             hm.put("title", classtitle);
-            al.add(hm);
-            mal.add(al);
+	        al.add(hm);
+	        mal.add(al);
+	            
         }
         
         //Setup the adapter views;
@@ -115,29 +135,39 @@ public class LearnYourRecordingsListViewActivity extends Activity{
                             public void onClick(DialogInterface dialog, int item) {
                                 switch(item) {
                                 case 0:
-//                                try {
-////                                    File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/rpath.txt");
-////                                    f.delete();
-////                                    f.createNewFile();
-////                                    FileOutputStream fOut = new FileOutputStream(f);
-////                                    OutputStreamWriter osw = new OutputStreamWriter(fOut);
-////                                    osw.write(Environment.getExternalStorageDirectory().getAbsolutePath() + "/recordings/" + br);
-////                                    osw.flush();
-////                                    osw.close();
-////                                    } catch (IOException e1) {
-////                                         e1.printStackTrace();
-////                                    }
-////                                
-////                                    Intent mainIntent = new Intent(getBaseContext(), DescribeActivity.class);
-////                                    startActivity(mainIntent);
-////                                    finish();
-//                                    return;
+
+                                	final SharedPreferences.Editor editor = prefs.edit();
+                    		        editor.putString("class", shmap.get("subject"));
+                    		        editor.putString("school", shmap.get("school"));
+                    	            editor.putString("title", shmap.get("title"));
+                    	            
+                    		        editor.commit();
+                    				
+                    				Handler mHandler = new Handler();
+                    				mHandler.postDelayed(new Runnable(){
+
+                    					public void run() {
+                    						
+                    					    try {
+                                                u_service.start();
+                                            } catch (RemoteException e) {
+                                                e.printStackTrace();
+                                            }
+                    					    
+                    				
+                    					}}, 200);
+                    				
+                    				lastTouched.setBackgroundColor(Color.WHITE);
+                                    return;
+                                   
                                 case 1:
-                                    Intent it;
-                                    Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getAbsolutePath() + shmap.get("path"));
-                                    it = new Intent(Intent.ACTION_VIEW, uri);
-                                    it.setDataAndType(uri,"video/3gpp");
-                                    startActivity(it);
+                                    Intent i = new Intent(c, PlayerActivity.class);
+                                    i.putExtra("School", shmap.get("school"));
+                                    i.putExtra("Subject", shmap.get("subject"));
+                                    i.putExtra("Course", shmap.get("course"));
+                                    i.putExtra("streamURL", shmap.get("path"));
+                                    i.putExtra("title", shmap.get("title"));
+                                    startActivity(i);
                                     return;
                                 }
                                 
@@ -151,6 +181,9 @@ public class LearnYourRecordingsListViewActivity extends Activity{
                     
             }
         });
+        
+        startService(new Intent(this, uService.class));
+        bindUploadService();
     }
     
     public void onResume() {
@@ -160,5 +193,12 @@ public class LearnYourRecordingsListViewActivity extends Activity{
             lastTouched.setBackgroundColor(Color.WHITE);
         }
     }
+    
+
+
+	private void bindUploadService(){
+	  u_servicedBind = bindService(new Intent(this, uService.class), 
+	          u_connection, Context.BIND_AUTO_CREATE);
+	}
 
 }
