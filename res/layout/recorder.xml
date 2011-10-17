@@ -124,6 +124,29 @@
    		android:minLines="1"
     ></EditText>
     
+    	<TextView  
+	    android:id="@+id/email_desc"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:textAppearance="?android:attr/textAppearanceSmall"
+	    android:text="\nWhat is your professor's email address? (This helps us catalog our data and ensure proper attribution.)"
+	    android:textColor="#fff"
+	    android:padding="3dip"
+	    android:shadowColor="#333"
+		android:shadowRadius="1"
+		android:shadowDy="-1"
+		android:visibility="gone"
+    />
+    
+       <EditText
+        android:id="@+id/email"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content" 
+    	android:hint="ex: rwjones@bu.edu"
+   		android:minLines="1"
+   		android:visibility="gone"
+    ></EditText>
+    
     <Button
     	android:id="@+id/record_button"
     	android:layout_width="fill_parent" 
@@ -152,16 +175,28 @@
     	
     />
     
-    <CheckBox android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I have permission to submit this recording."
-        android:layout_marginLeft="10dip"
-		android:layout_marginRight="10dip"
-        android:textColor="#ffffff"
-		android:shadowColor="#000000"
-		android:shadowDy="-1"
-		android:shadowRadius="1" />
+    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	>
+	    <CheckBox android:id="@+id/checkbox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="I have permission to submit this recording."
+	        android:layout_marginLeft="10dip"
+			android:layout_marginRight="20dip"
+			android:width="200dip"
+	        android:textColor="#ffffff"
+			android:shadowColor="#000000"
+			android:shadowDy="-1"
+			android:shadowRadius="1" />
+			<ImageButton
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/email_button"
+				android:src="@drawable/email_icon">
+			</ImageButton>
+	</LinearLayout>
     
     <Button
     	android:id="@+id/thebutton"
@@ -178,6 +213,8 @@
 		android:padding="8dip"
 		android:layout_marginLeft="10dip"
 		android:layout_marginRight="10dip"
+		android:layout_marginBottom="10dip"
+		
     ></Button>
     
     <ProgressBar
@@ -202,7 +239,8 @@
     	android:visibility="gone"
     	
     />
-	</LinearLayout>
+    
+    </LinearLayout>
 			
    </org.ale.lectureleaks.BetterScrollView>
 	     

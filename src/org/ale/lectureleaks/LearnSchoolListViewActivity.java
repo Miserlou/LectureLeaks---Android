@@ -70,7 +70,7 @@ public class LearnSchoolListViewActivity extends Activity{
                 ArrayList<HashMap<String, String>> in = mal.get(arg2);
                 HashMap<String, String> shmap = in.get(0);
  
-                if(shmap.containsKey("head") && shmap.get("head").equals("true")) {
+                if(shmap.containsKey("head") && shmap.get("head").equals("true") || shmap.get("name").equals("Loading..")) {
                     //fuck
                 }
                 else {

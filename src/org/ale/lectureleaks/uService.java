@@ -59,6 +59,7 @@ public class uService extends Service{
     String title = "";
     String school = "";
     String classcode = "";
+    String prof = "";
     String location = "XXX Unavailable XXX";
     String secUrlServer = "https://lectureleaks.org/uploadnocaptcha/";
     String urlServer = "http://lectureleaks.org/uploadnocaptcha/";
@@ -114,7 +115,7 @@ public class uService extends Service{
                                       "name", title,
                                       "school", school,
                                       "course", classcode,
-                                      "professor", "no prof",
+                                      "professor", prof,
                                       "subject", "no subj",
                                       "doc_file", f
                                      });
@@ -230,6 +231,7 @@ public class uService extends Service{
         classcode = prefs.getString("class" + topRecording, "No description available");
         school = prefs.getString("school" + topRecording, "No description available");
         title = prefs.getString("title" + topRecording, "No title available");
+        prof = prefs.getString("prof" + topRecording, "No professor available");
         pathToOurFile = prefs.getString("rec" + topRecording, "fuck.");
     }
     

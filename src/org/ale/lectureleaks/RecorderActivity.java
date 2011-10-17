@@ -45,6 +45,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,7 +61,9 @@ public class RecorderActivity extends Activity{
     EditText title;
     EditText classcode;
     EditText school;
+    EditText professor;
     CheckBox checkbox;
+    ImageButton email_button;
     recordService r_service;
     private ServiceConnection r_connection = new ServiceConnection(){
 
@@ -116,6 +119,7 @@ public class RecorderActivity extends Activity{
         title = (EditText)findViewById(R.id.title);
         classcode = (EditText)findViewById(R.id.course);
         school = (EditText)findViewById(R.id.school);
+        professor = (EditText)findViewById(R.id.email);
         
         mHandler = new Handler();
         
@@ -199,6 +203,7 @@ public class RecorderActivity extends Activity{
                         editor.putString("title" + topRecording, title.getText().toString());
                         editor.putString("class" + topRecording, classcode.getText().toString());
                         editor.putString("school" + topRecording, school.getText().toString());
+                        editor.putString("prof" + topRecording, professor.getText().toString());
                         editor.putInt("top_recording", topRecording);
                         editor.commit();
                         
@@ -231,6 +236,8 @@ public class RecorderActivity extends Activity{
 		        editor.putString("class", classcode.getText().toString());
 		        editor.putString("school", school.getText().toString());
 	            editor.putString("title", title.getText().toString());
+	            editor.putString("prof", professor.getText().toString());
+	            
 	            
 		        editor.commit();
 				
@@ -253,6 +260,17 @@ public class RecorderActivity extends Activity{
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         topRecording = prefs.getInt("top_recording", 0);
         editor = prefs.edit();
+        
+        email_button = (ImageButton)findViewById(R.id.email_button);
+        email_button.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				professor.setVisibility(View.VISIBLE);
+				TextView p_desc = (TextView)findViewById(R.id.email_desc);
+				p_desc.setVisibility(View.VISIBLE);
+				
+			}});
         
         String s = prefs.getString("da_school", null);
         
